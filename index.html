@@ -23,7 +23,8 @@
         	</ul>
 
         	<span class="moves">0</span> Guesses
-          <span class="timer">0</span> Seconds Elapsed
+            <span class="minutes">0</span> Min
+            <span class="seconds">0</span> Sec
             <div class="restart" onclick=newGame()>
         		<i class="fa fa-repeat"></i>
         	</div>
@@ -79,6 +80,17 @@
                 <i class="fa fa-cube"></i>
             </li>
         </ul>
+    </div>
+
+    <div id="victoryWindow" class="modal">
+        <div class="modal-content">
+            <!--<span class="close">&times;</span>-->
+            <h2>CONGRATULATIONS!</h2>
+            <p>You scored _ stars in _ min _ sec.</p>
+            <p>Play again?</p>
+            <button id='yes'>Yes</button>
+            <button id='no'>No</button>
+        </div>
     </div>
 
     <script src="js/app.js"></script>
