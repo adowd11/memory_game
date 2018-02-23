@@ -5,6 +5,8 @@ var card = document.getElementsByClassName('card');
 var allCards = Array.from(card);
 var guess = 0;
 var time = 0;
+var min = 0;
+var sec = 0;
 var timer;
 var openCards = [];
 var matchedCards = [];
@@ -34,7 +36,7 @@ function shuffle(array) {
     return array;
 }
 
-newGame()
+newGame();
 
 function flipCard() {
   this.classList.toggle('show');
@@ -87,11 +89,18 @@ function notMatches() {
 }
 
 function win() {
-  var r = confirm("Play Again?");
-  if (r==true) {
+  var popup = document.getElementById('victoryWindow');
+  var yes = document.getElementById('yes');
+  var no = document.getElementById('no');
+
+  popup.style.display = 'block';
+
+  yes.onclick = function() {
     newGame();
-  } else {
-    undefined;
+    popup.style.display = 'none';
+  }
+  no.onclick = function() {
+    popup.style.display = 'none';
   }
 }
 
@@ -115,13 +124,13 @@ function deactivateClick(array) {
 function countGuess() {
   guess++;
   document.querySelector('.moves').innerHTML = guess;
-  if (guess>10 && guess<15) {
+  if (guess>12 && guess<17) {
     starList[0].classList.remove('fa-star');
     starList[0].classList.add('fa-star-o');
-  } else if (guess>14 && guess<19) {
+  } else if (guess>16 && guess<21) {
     starList[1].classList.remove('fa-star');
     starList[1].classList.add('fa-star-o');
-  } else if (guess>18){
+  } else if (guess>20){
     starList[2].classList.remove('fa-star');
     starList[2].classList.add('fa-star-o');
   }
@@ -129,7 +138,15 @@ function countGuess() {
 
 function startTimer() {
   time++;
-  document.querySelector('.timer').innerHTML = time;
+  min = Math.floor(time/60);
+  sec = time%60;
+  if (min>59){
+    alert('You took over an hour on this..?\nGame. Over.')
+    newGame();
+  } else {
+    document.querySelector('.minutes').innerHTML = min;
+    document.querySelector('.seconds').innerHTML = sec;
+  }
 }
 
 function newGame() {
@@ -149,8 +166,11 @@ function newGame() {
   clearInterval(timer);
   timer = undefined;
   time = 0;
+  min = 0;
+  sec = 0;
   document.querySelector('.moves').innerHTML = guess;
-  document.querySelector('.timer').innerHTML = time;
+  document.querySelector('.minutes').innerHTML = min;
+  document.querySelector('.seconds').innerHTML = sec;
   for (var i=0; i<starList.length; i++) {
     starList[i].classList.add('fa-star');
     starList[i].classList.remove('fa-star-o');
