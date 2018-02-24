@@ -23,8 +23,10 @@
         	</ul>
 
         	<span class="moves">0</span> Guesses
-            <span class="minutes">0</span> Min
-            <span class="seconds">0</span> Sec
+            <span class="timer">
+              <span class="minutes">0</span> min &nbsp;
+              <span class="seconds">0</span> sec
+            </span>
             <div class="restart" onclick=newGame()>
         		<i class="fa fa-repeat"></i>
         	</div>
@@ -82,15 +84,23 @@
         </ul>
     </div>
 
-    <div id="victoryWindow" class="modal">
-        <div class="modal-content">
-            <!--<span class="close">&times;</span>-->
+    <div id="victoryWindow" class="window">
+        <div class="window-content">
             <h2>CONGRATULATIONS!</h2>
-            <p>You scored _ stars in _ min _ sec.</p>
+            <p>Score: &nbsp; <span class="finalStars"></span></p>
+            <p>Time: &nbsp; <span class="finalTimer"></span></p>
             <p>Play again?</p>
-            <button id='yes'>Yes</button>
-            <button id='no'>No</button>
+            <button id="yes" class="button">Yes</button>
+            <button id="no" class="button">No</button>
         </div>
+    </div>
+
+    <div id="timeoutWindow" class="window">
+      <div class="window-content">
+        <h1>Game Time-out</h1>
+        <p>How did this take over an hour..?</p>
+        <button id='ok'>OK</button>
+      </div>
     </div>
 
     <script src="js/app.js"></script>
