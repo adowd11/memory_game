@@ -1,20 +1,21 @@
 # Memory Game Project
 
+This is a 16 card matching game, resulting in 8 pairs of cards. On an incorrect guess you'll have 1 second to see the cards and remember where they are. Upon completion, you'll get a rating and total time. Use the reset button at any time to start over and produce a new 4x4 card board. Good luck!
+
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Contributing](#contributing)
+* [Authors](#authors)
+* [Acknowledgements](#acknowledgements)
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Download the project files and open the HTML to begin playing!
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Authors
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+* Addison Dowd
 
-## Contributing
+## Acknowledgements
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+Udacity provided the starter HTML and CSS code, along with the shuffle function in the JavaScript (from stackoverflow).
