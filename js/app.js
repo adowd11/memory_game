@@ -186,6 +186,7 @@ function newGame() {
   for (i=0; i<shuffledCards.length; i++) {
     deckElement.appendChild(shuffledCards[i]);
   }
+  openCards = [];
   matchedCards = [];
   guess = 0;
   clearInterval(timer);
